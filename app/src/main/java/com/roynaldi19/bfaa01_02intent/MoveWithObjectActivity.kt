@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.TextView
 
 class MoveWithObjectActivity : AppCompatActivity() {
-
     companion object {
         const val EXTRA_PERSON = "extra_person"
     }

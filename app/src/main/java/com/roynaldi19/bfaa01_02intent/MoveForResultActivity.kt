@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.RadioGroup
 
 class MoveForResultActivity : AppCompatActivity(), View.OnClickListener {
-
     private lateinit var btnChoose: Button
     private lateinit var rgNumber: RadioGroup
 

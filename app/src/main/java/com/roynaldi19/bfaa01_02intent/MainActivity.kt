@@ -10,7 +10,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-
     private lateinit var tvResult: TextView
 
     private val resultLauncher = registerForActivityResult(
