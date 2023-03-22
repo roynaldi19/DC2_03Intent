@@ -1,4 +1,4 @@
-package com.roynaldi19.bfaa01_02intent
+package com.roynaldi19.dc2_03intent
 
 import android.content.Intent
 import android.net.Uri

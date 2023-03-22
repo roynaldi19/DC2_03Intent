@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "BFAA01_02Intent"
+rootProject.name = "DC2_03Intent"
 include ':app'

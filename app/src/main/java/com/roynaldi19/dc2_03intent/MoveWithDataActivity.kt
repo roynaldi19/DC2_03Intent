@@ -1,4 +1,4 @@
-package com.roynaldi19.bfaa01_02intent
+package com.roynaldi19.dc2_03intent
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

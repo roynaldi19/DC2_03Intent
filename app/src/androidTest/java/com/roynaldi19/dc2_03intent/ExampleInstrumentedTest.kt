@@ -1,4 +1,4 @@
-package com.roynaldi19.bfaa01_02intent
+package com.roynaldi19.dc2_03intent
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

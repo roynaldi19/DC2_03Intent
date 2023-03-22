@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.roynaldi19.bfaa01_02intent">
+    package="com.roynaldi19.dc2_03intent">
 
     <application
         android:allowBackup="true"
@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BFAA01_02Intent">
         <activity
-            android:name=".MoveForResultActivity"
+            android:name="com.roynaldi19.dc2_03intent.MoveForResultActivity"
             android:exported="false" />
         <activity
-            android:name=".MoveWithObjectActivity"
+            android:name="com.roynaldi19.dc2_03intent.MoveWithObjectActivity"
             android:exported="false" />
         <activity
-            android:name=".MoveWithDataActivity"
+            android:name="com.roynaldi19.dc2_03intent.MoveWithDataActivity"
             android:exported="false" />
         <activity
-            android:name=".MoveActivity"
+            android:name="com.roynaldi19.dc2_03intent.MoveActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.roynaldi19.dc2_03intent.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
