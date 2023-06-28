@@ -1,4 +1,4 @@
-package com.roynaldi19.dc2_03intent
+package com.roynaldi19.dc2_03intent.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

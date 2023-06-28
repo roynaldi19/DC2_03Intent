@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BFAA01_02Intent">
         <activity
-            android:name="com.roynaldi19.dc2_03intent.MoveForResultActivity"
+            android:name="com.roynaldi19.dc2_03intent.view.MoveForResultActivity"
             android:exported="false" />
         <activity
-            android:name="com.roynaldi19.dc2_03intent.MoveWithObjectActivity"
+            android:name="com.roynaldi19.dc2_03intent.view.MoveWithObjectActivity"
             android:exported="false" />
         <activity
-            android:name="com.roynaldi19.dc2_03intent.MoveWithDataActivity"
+            android:name="com.roynaldi19.dc2_03intent.view.MoveWithDataActivity"
             android:exported="false" />
         <activity
-            android:name="com.roynaldi19.dc2_03intent.MoveActivity"
+            android:name="com.roynaldi19.dc2_03intent.view.MoveActivity"
             android:exported="false" />
         <activity
-            android:name="com.roynaldi19.dc2_03intent.MainActivity"
+            android:name="com.roynaldi19.dc2_03intent.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

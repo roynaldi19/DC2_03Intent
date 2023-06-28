@@ -1,16 +1,16 @@
-package com.roynaldi19.dc2_03intent
+package com.roynaldi19.dc2_03intent.view
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.roynaldi19.dc2_03intent.databinding.ActivityMainBinding
+import com.roynaldi19.dc2_03intent.model.Person
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var tvResult: TextView
+    private lateinit var binding: ActivityMainBinding
 
     private val resultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -18,69 +18,62 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (result.resultCode == MoveForResultActivity.RESULT_CODE && result.data != null) {
             val selectedValue =
                 result.data?.getIntExtra(MoveForResultActivity.EXTRA_SELECTED_VALUE, 0)
-            tvResult.text = "Hasil : $selectedValue"
+            binding.tvResult.text = "Hasil : $selectedValue"
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnMoveActivity: Button = findViewById(R.id.btn_move_activity)
-        btnMoveActivity.setOnClickListener(this)
-
-        val btnMoveWithDataActivity: Button = findViewById(R.id.btn_move_activity_data)
-        btnMoveWithDataActivity.setOnClickListener(this)
-
-        val btnMoveWithObject:Button = findViewById(R.id.btn_move_activity_object)
-        btnMoveWithObject.setOnClickListener(this)
-
-        val btnDialPhone:Button = findViewById(R.id.btn_dial_number)
-        btnDialPhone.setOnClickListener(this)
-
-        val btnMoveForResult:Button = findViewById(R.id.btn_move_for_result)
-        btnMoveForResult.setOnClickListener(this)
-        tvResult = findViewById(R.id.tv_result)
-
+        binding.btnMoveActivity.setOnClickListener(this)
+        binding.btnMoveActivityData.setOnClickListener(this)
+        binding.btnMoveActivityObject.setOnClickListener(this)
+        binding.btnDialNumber.setOnClickListener(this)
+        binding.btnMoveForResult.setOnClickListener(this)
 
     }
 
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btn_move_activity -> {
+    override fun onClick(v: View) {
+        when (v.id) {
+            binding.btnMoveActivity.id -> {
                 val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
                 startActivity(moveIntent)
             }
 
-            R.id.btn_move_activity_data -> {
+            binding.btnMoveActivityData.id -> {
                 val moveWithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "Roynaldi")
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 29)
                 startActivity(moveWithDataIntent)
             }
 
-            R.id.btn_move_activity_object -> {
+            binding.btnMoveActivityObject.id -> {
                 val person = Person(
                     "Roynaldi",
                     29,
                     "roynaldi19@gmail.com",
                     "Pekanbaru"
                 )
-                val moveWithObjectIntent = Intent(this@MainActivity, MoveWithObjectActivity::class.java)
+                val moveWithObjectIntent =
+                    Intent(this@MainActivity, MoveWithObjectActivity::class.java)
                 moveWithObjectIntent.putExtra(MoveWithObjectActivity.EXTRA_PERSON, person)
                 startActivity(moveWithObjectIntent)
             }
 
-            R.id.btn_dial_number -> {
+            binding.btnDialNumber.id -> {
                 val phoneNumber = "082391613400"
                 val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
                 startActivity(dialPhoneIntent)
             }
 
-            R.id.btn_move_for_result -> {
-                val moveForResultIntent = Intent(this@MainActivity, MoveForResultActivity::class.java)
+            binding.btnMoveForResult.id -> {
+                val moveForResultIntent =
+                    Intent(this@MainActivity, MoveForResultActivity::class.java)
                 resultLauncher.launch(moveForResultIntent)
             }
         }
     }
+
 }
